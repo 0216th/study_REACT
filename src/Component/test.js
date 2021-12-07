@@ -8,6 +8,7 @@ class Test extends React.Component {  //리액트의 컴포넌트 형태로 작�
             <div>
                 <TestProfile id={this.props.id} image={this.props.image} />
                 <TestInfo name={this.props.name} birthday={this.props.birthday} />
+                <AppClass></AppClass>
             </div>
 
 
@@ -32,6 +33,44 @@ class TestInfo extends React.Component {
             <div>
                 <h1>{this.props.name}</h1>
                 <h1>{this.props.birthday}</h1>
+            </div>
+        )
+    }
+}
+
+class Subject extends React.Component {
+    render() {
+
+        function aaa() {
+            console.log("zzz");
+        }
+
+        return (
+            <header>
+                <h1>{this.props.id}</h1>
+                World wide web
+                <h1>{aaa()}</h1>
+            </header>
+        )
+    }
+}
+
+
+class AppClass extends React.Component {
+    state = {
+        contents: [
+            { id: 1, title: "test1", desc: "desc test1" },
+            { id: 2, title: "test2", desc: "desc test2" },
+            { id: 3, title: "test3", desc: "desc test3" }
+        ]
+    } //객체 
+
+    render() {
+        return (
+            <div>
+                <Subject id="test1"></Subject>
+                <Subject id="test2"></Subject>
+                <Subject id="test3"></Subject>
             </div>
         )
     }
